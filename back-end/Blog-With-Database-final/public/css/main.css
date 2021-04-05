@@ -1,0 +1,44 @@
+.casecount-total {
+    color: #ffffff;
+    background-color: #1b3d6d;
+    border-color: #1b3d6d;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.casecount-panels {
+    padding: 0 !important;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+    background-color: #fff !important;
+    box-shadow: 0 10px 20px 0 rgb(29 29 32 /9%) !important;
+    border: 2px solid #e5e5e5;
+
+}
+
+.count-h2-title {
+    font-weight: 600;
+    font-size: 1.2em;
+    color: #555555;
+    padding: 10px 30px 10px 30px;
+
+}
+
+.count-h2-span {
+    font-weight: 600;
+    font-size: .85em;
+    color: #555555;
+}
+
+.casecount-panel-title {
+    font-size: 2em !important;
+    font-weight: 600;
+    font-family: san-serif;
+}
+
+.casecount-orange {
+    background-color: #ea5421;
+    border-color: #ea5421;
+}

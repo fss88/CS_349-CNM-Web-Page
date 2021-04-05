@@ -1,0 +1,33 @@
+<%- include("partials/header"); -%>
+  <!-- Page Header -->
+  <header class="masthead" style='background-image: url("<%= picture %>")'>
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading" data-post-role="title">
+            <h1><%= title %></h1>
+            <span class="meta" data-post-role="author">Posted by
+              <a href="#"><%= author %></a>
+              on <%= postDate %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto" data-post-role="content">
+          <p>
+            <%= content %>
+          </p>
+          
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <%- include("partials/footer"); -%>

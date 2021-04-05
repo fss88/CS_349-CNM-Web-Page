@@ -1,0 +1,35 @@
+
+<%- include("partials/header"); -%>
+
+
+    <!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/Covid\ Near\ Me.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1 style="color: aqua;">Compose</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="margin-5-25">
+    <form class="" action="/compose" method="post">
+      <div class="form-group">
+        <label>Title</label>
+        <input class="form-control" type="text" name="postTitle">
+        <label>Picture</label>
+        <input class="form-control" type="url" name="picture">
+        <label>Content</label>
+        <textarea class="form-control" name="postBody" rows="20" cols="30"></textarea>
+        <label>Author</label>
+        <textarea class="form-control" name="author" rows="1" cols="30"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit" name="button">Publish</button>
+    </form>
+  </section>
+
+<%- include("partials/footer"); -%>
