@@ -16,17 +16,18 @@
 </div>
 </header>
 
+
 <section class="margin-5-25">
-<form class="" action="/posts/:postId/edit/resource?_method=PATCH" method="post">
+<form class="" action="/posts/:postId/?_method=PUT" method="post">
   <div class="form-group">
     <label>Title</label>
-    <input class="form-control" type="text" name="postTitle">
+    <input class="form-control" type="text" name="postTitle" value="<%= title %>">
     <label>Picture</label>
-    <input class="form-control" type="url" name="picture">
+    <input class="form-control" type="url" name="picture" value="<%= picture %>">
     <label>Content</label>
-    <textarea class="form-control" name="postBody" rows="20" cols="30"></textarea>
+    <textarea class="form-control" name="postBody" rows="20" cols="30"><%= content %></textarea>
     <label>Author</label>
-    <textarea class="form-control" name="author" rows="1" cols="30"></textarea>
+    <textarea class="form-control" name="author" rows="1" cols="30" value="<%= author %>"><%= author %></textarea>
   </div>
   <button class="btn btn-primary" type="submit" name="button">Edit</button>
 </form>

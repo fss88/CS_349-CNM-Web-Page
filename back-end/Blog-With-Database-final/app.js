@@ -4,6 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
+var methodOverride = require('method-override');
+
 var dateFormat = require("dateformat");
 
 const app = express();
@@ -12,6 +14,7 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', express.static('public'));
+app.use(methodOverride('_method'))
 
 mongoose.connect("mongodb://localhost:27017/CMM", { useUnifiedTopology: true });
 
@@ -63,6 +66,7 @@ app.post("/compose", function(req, res){
   });
 
 
+
   post.save(function(err){
     if (!err){
         res.redirect("/");
@@ -85,6 +89,23 @@ console.log(requestedPostId, "===> requestedPostId")
   });
 
 });
+
+app.get("/posts/:postId/edit", function(req, res) {
+  const requestedPostId = req.params.postId;
+  Post.findOne({_id: requestedPostId}, function(err, post){
+    res.render("edit", {
+      title: post.title,
+      content: post.content,
+      author: post.author,
+      picture: post.picture,
+      postDate: post.postDate
+    });
+  });
+})
+
+app.put("/posts/:postId", function(req, res) {
+  res.send("Put routing works.");
+})
 
 app.get("/about", function(req, res){
   res.render("about");
