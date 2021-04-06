@@ -15,15 +15,28 @@
     background-color: #fff !important;
     box-shadow: 0 10px 20px 0 rgb(29 29 32 /9%) !important;
     border: 2px solid #e5e5e5;
+    height: 100%;
 
 }
+
+.wrapper {
+    margin-bottom: 30px;
+}
+
+
 
 .count-h2-title {
     font-weight: 600;
     font-size: 1.2em;
     color: #555555;
     padding: 10px 30px 10px 30px;
+    text-align: center;
+    height: 50%;
 
+}
+
+.panel-body {
+    height: 90%;
 }
 
 .count-h2-span {
@@ -42,3 +55,7 @@
     background-color: #ea5421;
     border-color: #ea5421;
 }
+
+@media screen and (max-width: 600px) {
+    
+  }

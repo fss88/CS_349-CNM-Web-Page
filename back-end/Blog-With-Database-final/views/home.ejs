@@ -1,7 +1,7 @@
 
 <%- include("partials/header"); -%>
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/Covid\ Near\ Me.png')">
+  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
@@ -18,10 +18,6 @@
   <section>
 
     <div class="container">
-      <div style="margin: 0 auto 20px; text-align: center">
-        <h1>California</h1>
-        <h2>March 25, 2021</h2>
-      </div>
 
   <div class="container">
     <div style="margin: 0 auto 20px; text-align: center">
@@ -31,7 +27,7 @@
     
       <div class="row text-center" style="margin-left: 0; margin-right: 0;">
 		<div class="row">
-			<div class="col-md-3 col-xs-12">
+			<div class="wrapper col-lg-3 col-md-4 col-sm-6 col-xs-12">
 				<div class="panel panel-primary casecount-panels">
 					<div class="panel-body text-center no-padding">
 						<h2 class="count-h2-title">Cumulative Cases to Date<br>
@@ -48,7 +44,7 @@
 					916 Persons Experiencing Homelessness</p> -->
 			</div>
 
-			<div class="col-md-3 col-xs-12">
+			<div class="wrapper col-lg-3 col-md-4 col-sm-6 col-xs-12">
 				<div class="panel panel-primary casecount-panels">
 					<div class="panel-body text-center no-padding">
 						<h2 class="count-h2-title">Daily COVID Positive Cases Received</h2>
@@ -62,7 +58,7 @@
 				<p style="font-style: italic; color: #636466;">&nbsp;</p>
 			</div>
 
-			<div class="col-md-3 col-xs-12">
+			<div class="wrapper col-lg-3 col-md-4 col-sm-6 col-xs-12">
 				<div class="panel panel-primary casecount-panels">
 					<div class="panel-body text-center no-padding">
 						<h2 class="count-h2-title">Cumulative Deaths to Date<br>
@@ -78,7 +74,7 @@
 					OC jail inmates, and 11&nbsp;Persons Experiencing Homelessness</p> -->
 			</div>
 
-			<div class="col-md-3 col-xs-12">
+			<div class="wrapper col-lg-3 col-md-4 col-sm-6 col-xs-12">
 				<div class="panel panel-primary casecount-panels">
 					<div class="panel-body text-center no-padding">
 						<h2 class="count-h2-title">Deaths Reported Today<br>
@@ -90,19 +86,10 @@
 					</div>
 				</div>
 
-				<!-- <p style="font-style: italic; color: #636466;">0 skilled nursing facility residents,<br>
-					0 skilled nursing facility staff,<br>
-					0&nbsp;assisted living facility residents,<br>
-					0&nbsp;OC Jail inmates,<br>
-					0&nbsp;Persons Experiencing Homelessness,<br>
-					19 residents (not living in a facility)</p> -->
+				
 			</div>
-		</div>
-
-		<p>&nbsp;</p>
-
-		<div class="row">
-			<div class="col-md-3 col-xs-12">
+		
+			<div class="wrapper col-lg-3 col-md-4 col-sm-6 col-xs-12">
 				<div class="panel panel-primary casecount-panels">
 					<div class="panel-body text-center no-padding">
 						<h2 class="count-h2-title">Cumulative Tests To Date<br>
@@ -114,10 +101,9 @@
 					</div>
 				</div>
 
-				<!-- <p style="font-style: italic; color: #636466;">&nbsp;</p> -->
 			</div>
 
-			<div class="col-md-3 col-xs-12">
+			<div class="wrapper col-lg-3 col-md-4 col-sm-6 col-xs-12">
 				<div class="panel panel-primary casecount-panels">
 					<div class="panel-body text-center no-padding">
 						<h2 class="count-h2-title">Tests Reported Today<br>
@@ -132,7 +118,7 @@
 				<p style="font-style: italic; color: #636466;">&nbsp;</p>
 			</div>
 
-			<div class="col-md-3 col-xs-12">
+			<div class="wrapper col-lg-3 col-md-4 col-sm-6 col-xs-12">
 				<div class="panel panel-primary casecount-panels">
 					<div class="panel-body text-center no-padding">
 						<h2 class="count-h2-title" >Cases Currently Hospitalized<br>
@@ -144,10 +130,9 @@
 					</div>
 				</div>
 
-				<!-- <p style="font-style: italic; color: #636466;">*Includes ICU cases</p> -->
 			</div>
 
-			<div class="col-md-3 col-xs-12">
+			<div class="wrapper col-lg-3 col-md-4 col-sm-6 col-xs-12">
 				<div class="panel panel-primary casecount-panels">
 					<div class="panel-body text-center no-padding">
 						<h2 class="count-h2-title">Cases Currently in ICU<br>
@@ -184,10 +169,13 @@
               <h2 class="post-title" data-post-role="title">
                 <%= post.title %>
               </h2>
-              <h3 class="post-subtitle" data-post-role="content">
-                <%= post.content %>
-              </h3>
-            </a>
+			</a>
+              <p data-post-role="content">
+				<%=post.content.substring(0, 200) + " ..."%>
+
+                <!-- <%= post.content %> -->
+			  </p>
+            
             <p class="post-meta" data-post-role="author">Posted by
               <a href="#"><%= post.author %></a>
               on <%= post.postDate %></p>
