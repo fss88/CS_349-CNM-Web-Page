@@ -16,8 +16,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', express.static('public'));
 app.use(methodOverride('_method'));
 
-// mongoose.connect("mongodb+srv://admin:shunshuke@cluster0.gu0rv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority/CMM", { useUnifiedTopology: true });
-mongoose.connect("mongodb://localhost:27017/CMM", { useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://admin:shunshuke@cluster0.cyzeb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useUnifiedTopology: true });
+// mongoose.connect("mongodb://localhost:27017/CMM", { useUnifiedTopology: true });
 
 const postSchema = new mongoose.Schema({
 
@@ -113,7 +113,7 @@ app.put("/posts/:postId", async function(req, res) {
     post.title = req.body.postTitle,
     post.picture = req.body.picture,
     post.content = req.body.postBody,
-    post.author = req.body.auhor
+    post.author = req.body.author
     };
   post.save();
   })
@@ -126,18 +126,11 @@ app.put("/posts/:postId", async function(req, res) {
 app.delete('/posts/:postId', function(req, res) {
   const requestedPostId = req.params.postId;
   Post.findByIdAndDelete(requestedPostId, function(err) {
-    if(!err) res.redirect("/");
-    console.log(err);
+    if(err) console.log(err);
   })
 
 })
 
-
-// app.put('/campgrounds/:id', async (req, res) => {
-//   const { id } = req.params;
-//   const campground = await Campground.findByIdAndUpdate(id, { ...req.body.campground });
-//   res.redirect(`/campgrounds/${campground._id}`)
-// });
 
 app.get("/about", function(req, res){
   res.render("about");
