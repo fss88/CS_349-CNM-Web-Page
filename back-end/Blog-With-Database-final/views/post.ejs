@@ -1,4 +1,4 @@
-<%- include("partials/header"); -%>
+<%- include("partials/headerNotHome"); -%>
   <!-- Page Header -->
   <header class="masthead" style='background-image: url("<%= picture %>")'>
     <div class="overlay"></div>
@@ -24,10 +24,17 @@
           <p>
             <%= content %>
           </p>
-          
+          <div class="container row" style="display: flex; justify-content: center;">
+    <a href="/posts/<%= postId %>/edit" class="btn btn-primary" style="margin: 30px" >Edit</a>
+    <form action="/posts/<%= postId %>/?_method=DELETE" method="POST">
+          <button class="btn btn-primary btn-lg" style="margin: 30px; background-color: red;">Delete</button>
+    </form>
+  </div>
         </div>
       </div>
     </div>
+    
   </article>
 
-  <%- include("partials/footer"); -%>
+  
+  <%- include("partials/footerNotHome"); -%>

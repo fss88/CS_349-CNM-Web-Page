@@ -1,5 +1,5 @@
  
-<!-- <%-include("partials/header"); -%>
+<!-- <%-include("partials/headerNotHome"); -%>
 
 
 <!-- Page Header -->
@@ -18,7 +18,7 @@
 
 
 <section class="margin-5-25">
-<form class="" action="/posts/:postId/?_method=PUT" method="post">
+<form class="" action="/posts/<%= postId %>/?_method=PUT" method="post">
   <div class="form-group">
     <label>Title</label>
     <input class="form-control" type="text" name="postTitle" value="<%= title %>">
@@ -33,9 +33,5 @@
 </form>
 </section>
 
-<section>
-    <form class="" action="/posts/:postId/edit/resource?_method=DELETE" method="post"></form>
-    <button class="btn btn-danger"></button>
-</section>
 
-<%- include("partials/footer"); -%>
+<%- include("partials/footerNotHome"); -%>
