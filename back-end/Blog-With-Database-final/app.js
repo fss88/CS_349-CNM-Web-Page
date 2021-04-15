@@ -9,25 +9,32 @@
 //Package JSON: When npm start command is executed it installs all the packages inside package.json
 //jshint esversion:6
 
+//Include/Require/Import packages that are being used in this file
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
 var methodOverride = require('method-override');
-
 var dateFormat = require("dateformat");
 
+//This is app initialization with express - app is an object of express class
 const app = express();
 
+//Specify what templating/view engine we are going to use inside our application - here we have sspecified ejs
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
+
+//Here we specify the path of public directory we are using
 app.use('/', express.static('public'));
 app.use(methodOverride('_method'));
 
+//Connection string: mongodb://localhost:27017/CMM
+//Name of the database is CMM
 mongoose.connect("mongodb+srv://admin:shunshuke@cluster0.cyzeb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useUnifiedTopology: true });
 // mongoose.connect("mongodb://localhost:27017/CMM", { useUnifiedTopology: true });
 
+//Here we specify the structure/schema of the mongodb collection - key value pair - Specify the type of each key that is in the mongodb collection
 const postSchema = new mongoose.Schema({
 
   title: String,
@@ -43,22 +50,27 @@ const postSchema = new mongoose.Schema({
   //comment: [String] - optional 
 });
 
+// "Post" is name of the collection/table - Pass a schema i.e. postSchema that describes the structure of document in Post collection in mongodb
 const Post = mongoose.model("Post", postSchema);
 
+//Specify an express route, This route recieves a get request, and we have a call back function(req, res) - recieves two argguments - request and response
 app.get("/", function(req, res){
-
+  
+  //Query Mongodb to find all the posts in the Post collection using the Postschema model we created above
   Post.find({}, function(err, posts){
 
     console.log({
       posts: posts
       })
     
+    //posts variabel contains all the posts and passes their variables to home page - where we can iterate over posts array to render the content and display it
     res.render("home", {
       posts: posts
       });
   });
 });
 
+//Compose route
 app.get("/compose", function(req, res){
   res.render("compose");
 });
@@ -140,7 +152,7 @@ app.delete('/posts/:postId', function(req, res) {
 
 })
 
-
+//static about route
 app.get("/about", function(req, res){
   res.render("about");
 });
@@ -153,7 +165,7 @@ app.get("/post", function(req, res){
   res.render("post");
 });
 
-
+//Here we specify the port for the application to listen on and start serving the application with a message
 app.listen(3000, function() {
   console.log("Server started on port 3000");
 });
