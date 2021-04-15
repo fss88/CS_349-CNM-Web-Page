@@ -7,7 +7,7 @@
 //Mongoose: NPM package that uses mongoDB and it is a modular approach of using mongodb - everything is organized
 //EJS: NPM package - Embedded Javascript - View engine - It is a simple templating language/engine that lets its user generate HTML with plain javascript.
 //Package JSON: When npm start command is executed it installs all the packages inside package.json
-//jshint esversion:6
+
 
 //Include/Require/Import packages that are being used in this file
 const express = require("express");
