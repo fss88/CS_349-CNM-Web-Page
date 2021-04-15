@@ -3,10 +3,10 @@ CPSC 349 - Group Project 1
 
 Team: Covid Near Me
 
-Front-end
+Front-end:
 Quoc Luong, 
 Preet Desai.
 
-Back-end
+Back-end:
 Fahad Al Sowaylim, 
 Loai Alfarran.
