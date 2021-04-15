@@ -1,3 +1,12 @@
+//Things that we have used in this whole backend application
+//=====
+//Language: Javascript
+//Node Js: Runtime environment for Javascript - Serves on server side - Used for backend
+//ExpressJs: NPM Package - Used for routing
+//NPM - Node Package Module
+//Mongoose: NPM package that uses mongoDB and it is a modular approach of using mongodb - everything is organized
+//EJS: NPM package - Embedded Javascript - View engine - It is a simple templating language/engine that lets its user generate HTML with plain javascript.
+//Package JSON: When npm start command is executed it installs all the packages inside package.json
 //jshint esversion:6
 
 const express = require("express");
